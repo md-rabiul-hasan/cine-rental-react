@@ -1156,3 +1156,12 @@ video {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+.bedge{
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: rgb(170, 241, 170);
+  border-radius: 10%;
+  padding: 2px 5px;
+}

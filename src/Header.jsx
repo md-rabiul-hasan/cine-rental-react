@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Moon from './assets/icons/moon.svg';
 import Logo from './assets/logo.svg';
 import Ring from './assets/ring.svg';
 import Cart from './assets/shopping-cart.svg';
+import { MovieContext } from './context';
 import CartDetails from './movie/CartDetails';
 
 export default function Header() {
   const [showCart, setShowCart] = useState(false);
+  const { cartData, setCartData } = useContext(MovieContext);
 
   // Close the cart details
   function handleCartDetailsClose() {
@@ -51,6 +53,11 @@ export default function Header() {
                 href="#"
               >
                 <img src={Cart} width="24" height="24" alt="Cart" />
+                {
+                  cartData.length > 0 && (
+                    <span className="bedge text-green font-bold text-sm">{cartData.length}</span>
+                  )
+                }
               </a>
             </li>
           </ul>
